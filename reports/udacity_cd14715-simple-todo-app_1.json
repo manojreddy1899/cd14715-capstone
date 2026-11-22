@@ -1,0 +1,280 @@
+{
+  "pullRequest": {
+    "owner": "udacity",
+    "repo": "cd14715-simple-todo-app",
+    "number": 1
+  },
+  "fileReviews": [
+    {
+      "file": "src/index.ts",
+      "codeQuality": {
+        "file": "src/index.ts",
+        "issues": [
+          {
+            "line": 10,
+            "severity": "high",
+            "category": "security",
+            "description": "Potential SQL injection issue in file",
+            "suggestion": "Use parameterized queries and proper validation"
+          },
+          {
+            "line": 25,
+            "severity": "low",
+            "category": "style",
+            "description": "Missing error handling",
+            "suggestion": "Add try-catch block"
+          }
+        ],
+        "overallScore": 75,
+        "summary": "File has 2 issues and adequate structure"
+      },
+      "testCoverage": {
+        "file": "src/index.ts",
+        "hasTests": true,
+        "testFiles": [
+          "tests/index.tstest.ts"
+        ],
+        "untestedPaths": [
+          {
+            "type": "function",
+            "location": "function_0_1",
+            "priority": "high",
+            "reasoning": "Edge case handling not tested",
+            "suggestedTest": "test('should handle empty input', () => { ... })"
+          },
+          {
+            "type": "branch",
+            "location": "line 35",
+            "priority": "medium",
+            "reasoning": "Error path not covered",
+            "suggestedTest": "test('should throw on invalid data', () => { ... })"
+          }
+        ],
+        "coverageEstimate": 65,
+        "summary": "Estimated 65% coverage with 2 untested paths"
+      },
+      "refactorings": {
+        "file": "src/index.ts",
+        "suggestions": [
+          {
+            "type": "extract-function",
+            "location": "lines 15-30",
+            "impact": "high",
+            "description": "Large function should be split",
+            "before": "function validateAndSave(data) { ... 50 lines ... }",
+            "after": "const validate = (data) => {...}\nconst save = (data) => {...}",
+            "benefits": "Improved testability and reusability"
+          },
+          {
+            "type": "modernize",
+            "location": "line 40",
+            "impact": "medium",
+            "description": "Use modern async/await pattern",
+            "before": "promise.then().catch()",
+            "after": "try { await promise; } catch (e) {}",
+            "benefits": "Better error handling and readability"
+          }
+        ],
+        "summary": "2 refactoring opportunities found"
+      }
+    },
+    {
+      "file": "src/utils/todo.ts",
+      "codeQuality": {
+        "file": "src/utils/todo.ts",
+        "issues": [
+          {
+            "line": 15,
+            "severity": "medium",
+            "category": "security",
+            "description": "Potential type safety issue in file",
+            "suggestion": "Use parameterized queries and proper validation"
+          },
+          {
+            "line": 30,
+            "severity": "low",
+            "category": "style",
+            "description": "Missing error handling",
+            "suggestion": "Add try-catch block"
+          }
+        ],
+        "overallScore": 80,
+        "summary": "File has 2 issues and adequate structure"
+      },
+      "testCoverage": {
+        "file": "src/utils/todo.ts",
+        "hasTests": true,
+        "testFiles": [
+          "tests/utilstest.ts"
+        ],
+        "untestedPaths": [
+          {
+            "type": "function",
+            "location": "function_1_1",
+            "priority": "high",
+            "reasoning": "Edge case handling not tested",
+            "suggestedTest": "test('should handle empty input', () => { ... })"
+          },
+          {
+            "type": "branch",
+            "location": "line 45",
+            "priority": "medium",
+            "reasoning": "Error path not covered",
+            "suggestedTest": "test('should throw on invalid data', () => { ... })"
+          }
+        ],
+        "coverageEstimate": 75,
+        "summary": "Estimated 75% coverage with 2 untested paths"
+      },
+      "refactorings": {
+        "file": "src/utils/todo.ts",
+        "suggestions": [
+          {
+            "type": "extract-function",
+            "location": "lines 35-50",
+            "impact": "high",
+            "description": "Large function should be split",
+            "before": "function validateAndSave(data) { ... 50 lines ... }",
+            "after": "const validate = (data) => {...}\nconst save = (data) => {...}",
+            "benefits": "Improved testability and reusability"
+          },
+          {
+            "type": "modernize",
+            "location": "line 55",
+            "impact": "medium",
+            "description": "Use modern async/await pattern",
+            "before": "promise.then().catch()",
+            "after": "try { await promise; } catch (e) {}",
+            "benefits": "Better error handling and readability"
+          }
+        ],
+        "summary": "2 refactoring opportunities found"
+      }
+    },
+    {
+      "file": "tests/todo.test.ts",
+      "codeQuality": {
+        "file": "tests/todo.test.ts",
+        "issues": [
+          {
+            "line": 20,
+            "severity": "medium",
+            "category": "security",
+            "description": "Potential type safety issue in file",
+            "suggestion": "Use parameterized queries and proper validation"
+          },
+          {
+            "line": 35,
+            "severity": "low",
+            "category": "style",
+            "description": "Missing error handling",
+            "suggestion": "Add try-catch block"
+          }
+        ],
+        "overallScore": 85,
+        "summary": "File has 2 issues and adequate structure"
+      },
+      "testCoverage": {
+        "file": "tests/todo.test.ts",
+        "hasTests": false,
+        "testFiles": [],
+        "untestedPaths": [
+          {
+            "type": "function",
+            "location": "function_2_1",
+            "priority": "high",
+            "reasoning": "Edge case handling not tested",
+            "suggestedTest": "test('should handle empty input', () => { ... })"
+          },
+          {
+            "type": "branch",
+            "location": "line 55",
+            "priority": "medium",
+            "reasoning": "Error path not covered",
+            "suggestedTest": "test('should throw on invalid data', () => { ... })"
+          }
+        ],
+        "coverageEstimate": 85,
+        "summary": "Estimated 85% coverage with 2 untested paths"
+      },
+      "refactorings": {
+        "file": "tests/todo.test.ts",
+        "suggestions": [
+          {
+            "type": "extract-function",
+            "location": "lines 55-70",
+            "impact": "high",
+            "description": "Large function should be split",
+            "before": "function validateAndSave(data) { ... 50 lines ... }",
+            "after": "const validate = (data) => {...}\nconst save = (data) => {...}",
+            "benefits": "Improved testability and reusability"
+          },
+          {
+            "type": "modernize",
+            "location": "line 70",
+            "impact": "medium",
+            "description": "Use modern async/await pattern",
+            "before": "promise.then().catch()",
+            "after": "try { await promise; } catch (e) {}",
+            "benefits": "Better error handling and readability"
+          }
+        ],
+        "summary": "2 refactoring opportunities found"
+      }
+    }
+  ],
+  "summary": {
+    "totalFiles": 3,
+    "overallScore": 72,
+    "criticalIssues": 1,
+    "highPriorityTests": 2,
+    "refactoringOpportunities": 6
+  },
+  "recommendations": [
+    {
+      "priority": "critical",
+      "category": "Security",
+      "description": "Address SQL injection vulnerability in authentication module",
+      "files": [
+        "src/index.ts"
+      ]
+    },
+    {
+      "priority": "high",
+      "category": "Testing",
+      "description": "Add integration tests for data persistence",
+      "files": [
+        "src/utils/todo.ts",
+        "tests/todo.test.ts"
+      ]
+    },
+    {
+      "priority": "medium",
+      "category": "Performance",
+      "description": "Consider caching strategy for frequently accessed data",
+      "files": [
+        "src/index.ts",
+        "src/utils/todo.ts"
+      ]
+    },
+    {
+      "priority": "low",
+      "category": "Code Quality",
+      "description": "Add JSDoc comments for public API",
+      "files": [
+        "src/index.ts",
+        "src/utils/todo.ts"
+      ]
+    }
+  ],
+  "metadata": {
+    "analyzedAt": "2026-11-22T06:57:10.945Z",
+    "duration": 6000,
+    "agentVersions": {
+      "orchestrator": "1.0",
+      "code-quality-analyzer": "1.0",
+      "test-coverage-analyzer": "1.0",
+      "refactoring-suggester": "1.0"
+    }
+  }
+}
